@@ -38,7 +38,7 @@ def initiate_payment(request):
    transaction.checksum = checksum
    transaction.save()
    cart=Cart.objects.filter(user=user)
-   for i in carts:
+   for i in cart:
    		i.payment_status=True
    		i.save()
    paytm_params['CHECKSUMHASH'] = checksum
